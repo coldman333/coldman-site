@@ -31,69 +31,71 @@ window.addEventListener('scroll', () => {
 
 // ===== PROJECTS SLIDER =====
 const track = document.getElementById('projects-track');
-const prevBtn = document.getElementById('slider-prev');
-const nextBtn = document.getElementById('slider-next');
-const dotsContainer = document.getElementById('slider-dots');
-const cards = track.querySelectorAll('.project-card');
-let currentIndex = 0;
-let cardsPerView = window.innerWidth > 1024 ? 2 : 1;
+if (track) {
+  const prevBtn = document.getElementById('slider-prev');
+  const nextBtn = document.getElementById('slider-next');
+  const dotsContainer = document.getElementById('slider-dots');
+  const cards = track.querySelectorAll('.project-card');
+  let currentIndex = 0;
+  let cardsPerView = window.innerWidth > 1024 ? 2 : 1;
 
-function getTotalSlides() {
-  return Math.max(1, cards.length - cardsPerView + 1);
-}
-
-function buildDots() {
-  dotsContainer.innerHTML = '';
-  const total = getTotalSlides();
-  for (let i = 0; i < total; i++) {
-    const dot = document.createElement('button');
-    dot.className = 'slider-dot' + (i === currentIndex ? ' active' : '');
-    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-    dot.addEventListener('click', () => goToSlide(i));
-    dotsContainer.appendChild(dot);
+  function getTotalSlides() {
+    return Math.max(1, cards.length - cardsPerView + 1);
   }
-}
 
-function goToSlide(index) {
-  const total = getTotalSlides();
-  currentIndex = Math.max(0, Math.min(index, total - 1));
-  const card = cards[0];
-  const gap = 30;
-  const cardWidth = card.offsetWidth + gap;
-  track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-  // Update dots
-  dotsContainer.querySelectorAll('.slider-dot').forEach((dot, i) => {
-    dot.classList.toggle('active', i === currentIndex);
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const total = getTotalSlides();
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === currentIndex ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function goToSlide(index) {
+    const total = getTotalSlides();
+    currentIndex = Math.max(0, Math.min(index, total - 1));
+    const card = cards[0];
+    const gap = 30;
+    const cardWidth = card.offsetWidth + gap;
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    // Update dots
+    dotsContainer.querySelectorAll('.slider-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+  // Recalculate on resize
+  window.addEventListener('resize', () => {
+    const newPerView = window.innerWidth > 1024 ? 2 : 1;
+    if (newPerView !== cardsPerView) {
+      cardsPerView = newPerView;
+      currentIndex = 0;
+      buildDots();
+      goToSlide(0);
+    }
   });
+
+  // Touch support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? goToSlide(currentIndex + 1) : goToSlide(currentIndex - 1);
+    }
+  });
+
+  buildDots();
 }
-
-prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-// Recalculate on resize
-window.addEventListener('resize', () => {
-  const newPerView = window.innerWidth > 1024 ? 2 : 1;
-  if (newPerView !== cardsPerView) {
-    cardsPerView = newPerView;
-    currentIndex = 0;
-    buildDots();
-    goToSlide(0);
-  }
-});
-
-// Touch support
-let touchStartX = 0;
-let touchEndX = 0;
-track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-track.addEventListener('touchend', e => {
-  touchEndX = e.changedTouches[0].screenX;
-  const diff = touchStartX - touchEndX;
-  if (Math.abs(diff) > 50) {
-    diff > 0 ? goToSlide(currentIndex + 1) : goToSlide(currentIndex - 1);
-  }
-});
-
-buildDots();
 
 // ===== SCROLL REVEAL =====
 const revealElements = document.querySelectorAll('.reveal');
