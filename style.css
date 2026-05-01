@@ -939,6 +939,38 @@ img {
   .projects-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
+  }
+
+  .projects-track {
+    gap: 16px;
+  }
+
+  .project-card {
+    min-width: calc(85% - 16px);
+  }
+
+  .project-image {
+    aspect-ratio: 16/9;
+  }
+
+  .project-info {
+    padding: 20px;
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-info p {
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+
+  .project-meta {
+    padding-top: 14px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .hero h1 {
