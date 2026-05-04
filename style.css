@@ -245,7 +245,7 @@ img {
   width: 100%;
 }
 
-.nav-cta {
+.nav-links .nav-cta {
   padding: 10px 36px;
   border-radius: 50px;
   background: var(--gradient-1);
@@ -257,12 +257,12 @@ img {
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.nav-cta:hover {
+.nav-links .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px var(--accent-glow);
 }
 
-.nav-cta::after {
+.nav-links .nav-cta::after {
   display: none !important;
 }
 
