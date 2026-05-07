@@ -59,7 +59,7 @@ if (track) {
     const total = getTotalSlides();
     currentIndex = Math.max(0, Math.min(index, total - 1));
     const card = cards[0];
-    const gap = 30;
+    const gap = window.innerWidth <= 768 ? 16 : 30;
     const cardWidth = card.offsetWidth + gap;
     track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     // Update dots
@@ -78,8 +78,8 @@ if (track) {
       cardsPerView = newPerView;
       currentIndex = 0;
       buildDots();
-      goToSlide(0);
     }
+    goToSlide(currentIndex);
   });
 
   // Touch support
