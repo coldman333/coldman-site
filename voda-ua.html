@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voda UA — Coldman</title>
+  <meta name="description" content="Voda UA is a premium e-commerce platform for water delivery services built with Next.js, Payload CMS, and Tailwind CSS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Specific styles for the project details page */
+    .game-hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+    }
+
+    .game-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .game-title h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 10px;
+    }
+
+    .game-tags {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 6px 14px;
+      border-radius: 50px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-light);
+    }
+
+    .game-gallery {
+      margin-bottom: 60px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      position: relative;
+    }
+
+    .main-screenshot {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 10px;
+      padding: 16px;
+      background: rgba(10, 10, 15, 0.8);
+      overflow-x: auto;
+      backdrop-filter: blur(10px);
+    }
+
+    .thumbnail {
+      width: 120px;
+      aspect-ratio: 16/9;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: var(--transition-base);
+      border: 2px solid transparent;
+      flex-shrink: 0;
+    }
+
+    .thumbnail:hover, .thumbnail.active {
+      opacity: 1;
+      border-color: var(--accent);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .game-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+    }
+
+    @media (max-width: 900px) {
+      .game-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .game-description h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .game-description h3 {
+      font-size: 1.3rem;
+      margin: 30px 0 15px;
+      color: var(--accent-light);
+    }
+
+    .game-description p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .how-to-list {
+      list-style: none;
+      counter-reset: custom-counter;
+      margin-top: 20px;
+    }
+
+    .how-to-list li {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 24px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .how-to-list li::before {
+      counter-increment: custom-counter;
+      content: counter(custom-counter);
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gradient-1);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .game-sidebar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      height: fit-content;
+    }
+
+    .sidebar-block {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .sidebar-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .sidebar-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .sidebar-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">Cold<span>man</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="index.html#projects" class="active">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Details Section -->
+  <section class="game-hero">
+    <div class="container">
+      <div class="game-header reveal">
+        <div class="game-title">
+          <div class="game-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">Payload CMS</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+          <h1>Voda <span class="gradient-text">UA</span></h1>
+          <p class="section-subtitle" style="margin: 0;">A high-performance e-commerce platform for water delivery.</p>
+        </div>
+        <div class="game-cta">
+          <a href="https://vodaua.ua/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 16px 40px; font-size: 1.1rem;">
+            Visit Site
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="game-gallery reveal reveal-delay-1">
+        <img src="images/voda-ua.png" alt="Voda UA Homepage" class="main-screenshot" id="main-screenshot">
+
+        <div class="thumbnails" id="thumbnails-container">
+          <div class="thumbnail active" onclick="changeImage('images/voda-ua.png', this)">
+            <img src="images/voda-ua.png" alt="Screenshot 1">
+          </div>
+          <div class="thumbnail" onclick="changeImage('images/voda-ua-2.png', this)">
+            <img src="images/voda-ua-2.png" alt="Screenshot 2">
+          </div>
+        </div>
+      </div>
+
+      <div class="game-content">
+        <div class="game-description reveal reveal-delay-2">
+          <h2>About The Project</h2>
+          <p>Voda UA is a cutting-edge e-commerce solution tailored for the water delivery industry. The platform focuses on speed, reliability, and a seamless user experience, allowing customers to order fresh water with just a few clicks.</p>
+          <p>By leveraging a modern headless architecture, Voda UA ensures lightning-fast page loads and an intuitive administrative interface for managing complex delivery logistics.</p>
+
+          <h3>Key Features</h3>
+          <ol class="how-to-list">
+            <li><strong>Seamless Online Ordering.</strong> An optimized checkout flow designed to minimize friction and maximize conversions for recurring water orders.</li>
+            <li><strong>Robust Content Management.</strong> Powered by Payload CMS, providing the client with full control over product catalogs, pricing, and promotional banners without touching code.</li>
+            <li><strong>Premium Responsive Design.</strong> Built with Tailwind CSS, the site delivers a flawless experience across all devices, from high-end desktops to mobile phones.</li>
+          </ol>
+        </div>
+
+        <div class="game-sidebar reveal reveal-delay-3">
+          <div class="sidebar-block">
+            <div class="sidebar-title">Tech Stack</div>
+            <div class="sidebar-value">Next.js + Payload CMS</div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">Styled with Tailwind CSS</div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-title">Category</div>
+            <div class="sidebar-value">E-commerce / Delivery Service</div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-title">Status</div>
+            <div class="sidebar-value" style="color: #34d399;">Live</div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-title">Link</div>
+            <div class="sidebar-value">
+              <a href="https://vodaua.ua/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-light); text-decoration: underline;">
+                vodaua.ua
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact" style="margin-top: 80px;">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="logo">Cold<span>man</span></div>
+        <p>&copy; 2024 Coldman Studio. All rights reserved.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="mailto:hello@coldman.com">hello@coldman.com</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="main.js" async></script>
+  <script>
+    function changeImage(src, element) {
+      document.getElementById('main-screenshot').src = src;
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      thumbnails.forEach(t => t.classList.remove('active'));
+      element.classList.add('active');
+    }
+  </script>
+</body>
+</html>
