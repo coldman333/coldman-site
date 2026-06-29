@@ -29,7 +29,7 @@
     <div class="navbar-inner">
       <a href="#" class="logo">Cold<span>man</span></a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact" class="nav-cta">Contact Us</a></li>
@@ -91,7 +91,7 @@
       <div class="about-grid">
         <div class="about-visual reveal">
           <div class="about-visual-card">
-            <img src="images/project-2.png" alt="Our modern office interior with natural light and living walls">
+            <img src="images/project-2.png" alt="Project preview showcase">
           </div>
           <div class="floating-badge">
             <div class="icon">★</div>
@@ -151,9 +151,9 @@
             to deliver premium web solutions.</p>
           <div class="team-socials">
             <a href="https://www.linkedin.com/in/volodymyr-teplyi-4a14b024/" aria-label="LinkedIn"
-              target="_blank">in</a>
-            <a href="#" aria-label="Twitter">𝕏</a>
-            <a href="#" aria-label="Email">✉</a>
+              target="_blank" rel="noopener noreferrer">in</a>
+            <span class="social-placeholder" aria-label="Twitter (coming soon)">𝕏</span>
+            <span class="social-placeholder" aria-label="Email (coming soon)">✉</span>
           </div>
         </div>
         <!-- Team Member 2 -->
@@ -166,9 +166,9 @@
           <p class="bio">Experienced technical leader driving engineering excellence. Dmytro ensures our Next.js and CMS
             architecture scales perfectly.</p>
           <div class="team-socials">
-            <a href="https://www.linkedin.com/in/dmytromachulskyi/" aria-label="LinkedIn" target="_blank">in</a>
-            <a href="#" aria-label="Twitter">𝕏</a>
-            <a href="#" aria-label="Email">✉</a>
+            <a href="https://www.linkedin.com/in/dmytromachulskyi/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+            <span class="social-placeholder" aria-label="Twitter (coming soon)">𝕏</span>
+            <span class="social-placeholder" aria-label="Email (coming soon)">✉</span>
           </div>
         </div>
 
@@ -182,9 +182,9 @@
           <p class="bio">Frontend specialist architecting scalable content systems with Payload and Strapi CMS. Roman
             powers our dynamic platforms.</p>
           <div class="team-socials">
-            <a href="https://www.linkedin.com/in/webroni2509/" aria-label="LinkedIn" target="_blank">in</a>
-            <a href="#" aria-label="Twitter">𝕏</a>
-            <a href="#" aria-label="Email">✉</a>
+            <a href="https://www.linkedin.com/in/webroni2509/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+            <span class="social-placeholder" aria-label="Twitter (coming soon)">𝕏</span>
+            <span class="social-placeholder" aria-label="Email (coming soon)">✉</span>
           </div>
         </div>
       </div>
@@ -276,7 +276,7 @@
               </div>
             </div>
           </div>
-          <!-- Project 6 — Voda UA -->
+          <!-- Project 4 — Voda UA -->
           <div class="project-card">
             <div class="project-image">
               <a href="voda-ua.html">
@@ -294,8 +294,9 @@
                 <span>📅 2026</span>
               </div>
             </div>
-          </div>/
-          <!-- Project 0 — Bomberman Web -->
+          </div>
+
+          <!-- Project 5 — Bomberman Web -->
           <div class="project-card">
             <div class="project-image">
               <a href="bomberman.html">
@@ -313,7 +314,7 @@
               </div>
             </div>
           </div>
-          <!-- Project — Game Portal -->
+          <!-- Project 6 — Game Portal -->
           <div class="project-card">
             <div class="project-image">
               <a href="game-portal.html">
@@ -339,18 +340,53 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <span class="section-label reveal">Contact Us</span>
+        <h2 class="section-title reveal">Let's Build Something Together</h2>
+        <p class="section-subtitle reveal">Have a project in mind or want to learn more about our work? Reach out — we
+          respond within one business day.</p>
+        <div class="contact-actions reveal">
+        <form action="https://formspree.io/f/xqevldea" method="POST" class="contact-form">
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <button type="submit" class="btn-primary">
+            Send
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </form>
+        </div>
+
+<!--        <div class="contact-actions reveal">-->
+<!--          <a href="mailto:info@coldman.net" class="btn-primary">-->
+<!--            info@coldman.net-->
+<!--            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"-->
+<!--              stroke-linecap="round" stroke-linejoin="round">-->
+<!--              <path d="M5 12h14M12 5l7 7-7 7" />-->
+<!--            </svg>-->
+<!--          </a>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <div class="footer-inner">
       <div class="footer-left">
         <div class="logo">Cold<span>man</span></div>
-        <p>&copy; 2024 Coldman Studio. All rights reserved.</p>
+        <p>&copy; 2026 Coldman Studio. All rights reserved.</p>
       </div>
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="mailto:info@coldman.com">info@coldman.com</a></li>
+        <li><a href="mailto:info@coldman.net">info@coldman.net</a></li>
       </ul>
     </div>
   </footer>
