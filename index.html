@@ -367,16 +367,19 @@
         <p class="section-subtitle reveal">Have a project in mind or want to learn more about our work? Reach out — we
           respond within one business day.</p>
         <div class="contact-actions reveal">
-        <form action="https://formspree.io/f/xqevldea" method="POST" class="contact-form">
-          <input type="email" name="email" placeholder="Your email" required />
-          <textarea name="message" placeholder="Your message" required></textarea>
-          <button type="submit" class="btn-primary">
-            Send
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        <form id="contact-form" action="https://formspree.io/f/xqevldea" method="POST" class="contact-form" novalidate>
+          <input type="email" name="email" id="cf-email" placeholder="Your email" required />
+          <textarea name="message" id="cf-message" placeholder="Your message" required></textarea>
+          <p class="cf-error" id="cf-error" role="alert" aria-live="polite"></p>
+          <button type="submit" class="btn-primary" id="cf-submit" disabled>
+            <span class="cf-label">Send</span>
+            <svg class="cf-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                  stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
+            <span class="cf-spinner" aria-hidden="true"></span>
           </button>
+          <p class="cf-success" id="cf-success" role="status" aria-live="polite"></p>
         </form>
         </div>
 

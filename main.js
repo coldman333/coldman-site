@@ -173,3 +173,94 @@ const statObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 statElements.forEach(el => statObserver.observe(el));
+
+// ===== Contact form =====
+const cfForm = document.getElementById('contact-form');
+const cfEmail = document.getElementById('cf-email');
+const cfMessage = document.getElementById('cf-message');
+const cfSubmit = document.getElementById('cf-submit');
+const cfError = document.getElementById('cf-error');
+const cfSuccess = document.getElementById('cf-success');
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function cfSetError(msg) {
+  cfError.textContent = msg;
+}
+
+function cfValidate() {
+  cfEmail.classList.remove('is-invalid');
+  cfMessage.classList.remove('is-invalid');
+  const email = cfEmail.value.trim();
+  const message = cfMessage.value.trim();
+  if (!email && !message) {
+    cfSetError('');
+    return false;
+  }
+  if (!email) {
+    cfSetError('');
+    return false;
+  }
+  if (!emailRe.test(email)) {
+    cfEmail.classList.add('is-invalid');
+    cfSetError('Email format invalid.');
+    return false;
+  }
+  if (!message) {
+    cfSetError('');
+    return false;
+  }
+  cfSetError('');
+  return true;
+}
+
+function cfSync() {
+  cfSubmit.disabled = !cfValidate();
+}
+
+[cfEmail, cfMessage].forEach(el => {
+  el.addEventListener('input', () => {
+    el.classList.remove('is-invalid');
+    if (cfError.textContent) cfSetError('');
+    cfSync();
+  });
+});
+
+cfSync();
+
+if (cfForm) {
+  cfForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (cfSubmit.disabled) return;
+    cfSuccess.textContent = '';
+    if (!cfValidate()) return;
+    cfSubmit.disabled = true;
+    cfSubmit.classList.add('is-loading');
+    try {
+      const res = await fetch(cfForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(cfForm),
+      });
+      if (res.ok) {
+        cfForm.reset();
+        cfSuccess.textContent = 'Message sent. We will reply within one business day.';
+        cfSync();
+      } else {
+        let msg = 'Send failed. Try again or email info@coldman.net.';
+        try {
+          const data = await res.json();
+          if (data && data.errors && data.errors.length) {
+            msg = data.errors.map(err => err.message).join(', ');
+          }
+        } catch (_) {}
+        cfSetError(msg);
+        cfSync();
+      }
+    } catch (err) {
+      cfSetError('Network error. Try again later.');
+      cfSync();
+    } finally {
+      cfSubmit.classList.remove('is-loading');
+    }
+  });
+}
