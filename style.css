@@ -1134,3 +1134,6 @@ img {
     justify-content: center;
   }
 }
+@media (max-width: 720px) {
+  .service-cta { grid-template-columns: 1fr !important; }
+}

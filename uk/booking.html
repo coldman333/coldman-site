@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сайт з онлайн-записом для сервісного бізнесу | Coldman</title>
+  <meta name="description" content="Сайти під ключ з онлайн-записом для автомайстерень, шиномонтажу, барбершопів, салонів, клінік та локального сервісного бізнесу. Фіксована щомісячна оплата. Адмін-панель, підтвердження, сповіщення в email і Telegram." />
+  <meta name="theme-color" content="#f5f1ea" />
+  <meta property="og:title" content="Сайт з онлайн-записом для сервісного бізнесу | Coldman" />
+  <meta property="og:og:description" content="Сайти під ключ із системою онлайн-бронювання, адмін-панеллю та сповіщеннями. Для бізнесів, що працюють за записами." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/booking.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231a1a1a'/><text x='50%25' y='58%25' font-family='Georgia' font-size='38' text-anchor='middle' fill='%23f5f1ea'>C</text></svg>" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">Coldman<span>.</span></a>
+      <nav class="nav__links" aria-label="Головна навігація">
+        <a href="#industries">Ніші</a>
+        <a href="#how">Як це працює</a>
+        <a href="#features">Можливості</a>
+        <a href="#pricing">Ціни</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__cta">
+        <div class="lang-toggle" aria-label="Мова">
+          <a href="/en/booking.html" hreflang="en">EN</a>
+          <a href="/uk/booking.html" class="is-active" hreflang="uk">UK</a>
+        </div>
+        <a href="#lead" class="btn btn--primary">Запросити демо <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="reveal">
+        <span class="eyebrow">Для бізнесів, що працюють за записами</span>
+        <h1 class="hero__title">Сайт для вашого бізнесу з <em>онлайн-записом</em>.</h1>
+        <p class="hero__sub lead">Для автомайстерень, шиномонтажу, барбершопів, салонів краси та нігтьової студії, SPA, грумінгу, стоматологічних і приватних клінік. Робимо сайти під ключ із бронюванням тайм-слотів, адмін-панеллю, підтвердженнями та сповіщеннями — за фіксованою щомісячною ціною.</p>
+        <div class="hero__cta">
+          <a href="#lead" class="btn btn--accent">Запросити демо <span class="arrow">→</span></a>
+          <a href="#pricing" class="btn btn--ghost">Дивитись ціни</a>
+        </div>
+        <div class="hero__trust">
+          <span><strong>2–3 тижні</strong> · до запуску</span>
+          <span><strong>$39 / міс</strong> · фіксовано</span>
+          <span><strong>Без передоплати</strong></span>
+        </div>
+      </div>
+
+      <!-- Мокап інтерфейсу бронювання -->
+      <div class="mock reveal" aria-hidden="true">
+        <div class="mock__bar">
+          <span></span><span></span><span></span>
+          <span class="mock__url">yourbusiness.com/book</span>
+        </div>
+        <div class="mock__body">
+          <div class="mock__step">
+            <span class="mock__stepnum">1</span>
+            <div class="mock__step-body">
+              <b>Оберіть послугу</b>
+              <span>Шиномонтаж · від 30 хв</span>
+            </div>
+          </div>
+          <div class="mock__step">
+            <span class="mock__stepnum">2</span>
+            <div class="mock__step-body">
+              <b>Оберіть дату і час</b>
+              <span>Завтра · 4 вільні слоти</span>
+            </div>
+          </div>
+          <div class="mock__grid" role="list">
+            <span class="mock__slot is-taken">09:00</span>
+            <span class="mock__slot">10:00</span>
+            <span class="mock__slot is-active">11:00</span>
+            <span class="mock__slot">12:00</span>
+            <span class="mock__slot">13:00</span>
+            <span class="mock__slot is-taken">14:00</span>
+            <span class="mock__slot">15:00</span>
+            <span class="mock__slot">16:00</span>
+          </div>
+          <div class="mock__legend">
+            <span><i class="av"></i>Вільно</span>
+            <span><i class="tk"></i>Зайнято</span>
+            <span><i class="sl"></i>Обрано</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRIES ============ -->
+  <section class="section" id="industries">
+    <div class="container">
+      <div class="industries__head reveal">
+        <div class="section-head">
+          <span class="eyebrow">Для кого</span>
+          <h2>Для бізнесів, день яких вимірюється <em style="font-family:var(--serif);color:var(--accent)">записами</em>.</h2>
+          <p class="lead">Якщо ваш день — це слоти, крісла, бокси, столи чи спеціалісти, ми налаштуємо сайт і логіку бронювання під те, як ви реально працюєте.</p>
+        </div>
+      </div>
+
+      <div class="industries__grid">
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17h18M5 17V8l7-4 7 4v9M7 17v-5h10v5"/></svg>
+          <div>
+            <div class="industry__title">Автомайстерні</div>
+            <div class="industry__sub">Підйомники, пости, механіки</div>
+          </div>
+        </div>
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+          <div>
+            <div class="industry__title">Шиномонтаж</div>
+            <div class="industry__sub">Сезонна заміна, збирання коліс</div>
+          </div>
+        </div>
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l3 8 3-3 3 3 3-8M4 21h16"/></svg>
+          <div>
+            <div class="industry__title">Барбершопи</div>
+            <div class="industry__sub">Крісла, майстри, walk-in</div>
+          </div>
+        </div>
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3l4 8 4-8M5 21c0-4 3-7 7-7s7 3 7 7"/></svg>
+          <div>
+            <div class="industry__title">Нігтьові та beauty-салони</div>
+            <div class="industry__sub">Манікюр, брови, вії</div>
+          </div>
+        </div>
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c2 4 5 5 5 9a5 5 0 01-10 0c0-2 1-3 2-4M9 21h6"/></svg>
+          <div>
+            <div class="industry__title">SPA та масаж</div>
+            <div class="industry__sub">Кімнати, програми, терапевти</div>
+          </div>
+        </div>
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 11c0-3 2-5 5-5h2l2-2 2 2h2c3 0 5 2 5 5v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6z"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/><path d="M10 16h4"/></svg>
+          <div>
+            <div class="industry__title">Грумінг тварин</div>
+            <div class="industry__sub">Столи, породи, час за розміром</div>
+          </div>
+        </div>
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="9"/></svg>
+          <div>
+            <div class="industry__title">Клініки та приватна практика</div>
+            <div class="industry__sub">Лікарі, консультації</div>
+          </div>
+        </div>
+        <div class="industry reveal">
+          <svg class="industry__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+          <div>
+            <div class="industry__title">Локальні сервіси</div>
+            <div class="industry__sub">Будь-який бізнес із записами</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section section--tight" id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Як це працює</span>
+        <h2>Від заявки до підтвердженого запису — п'ять кроків.</h2>
+        <p class="lead">Без переписок і дзвінків. Клієнт записується, ви підтверджуєте, система робить усе інше.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step__num">01</div>
+          <div class="step__title">Клієнт обирає послугу</div>
+          <div class="step__body">Ваші послуги, тривалість і ціни чітко показані на сайті.</div>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">02</div>
+          <div class="step__title">Обирає дату і слот</div>
+          <div class="step__body">Актуальна доступність по зонах, майстрах і робочих місцях.</div>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">03</div>
+          <div class="step__title">Заявка приходить у панель</div>
+          <div class="step__body">Ви одразу бачите запит із повним контекстом: клієнт, послуга, зона.</div>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">04</div>
+          <div class="step__title">Підтверджуєте або переносите</div>
+          <div class="step__body">Підтвердження в один клік, або перетягніть слот на інший час.</div>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">05</div>
+          <div class="step__title">Клієнт отримує сповіщення</div>
+          <div class="step__body">Email, Telegram і (на Premium) SMS — з нагадуванням напередодні візиту.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Що всередині</span>
+        <h2>Усе, що потрібно, щоб бронювання працювало як бізнес-процес.</h2>
+      </div>
+
+      <div class="features__grid">
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          <span class="feature__tag">Базове</span>
+          <div class="feature__title">Бронювання тайм-слотів</div>
+          <div class="feature__body">Тривалість слотів, графік, перерви, вихідні — все налаштовується. Клієнт бачить тільки реально вільний час.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 14h6"/></svg>
+          <span class="feature__tag">Базове</span>
+          <div class="feature__title">Адмін-панель</div>
+          <div class="feature__body">Один екран на сьогодні: записи, статуси, нотатки клієнтів, перенесення. Зрозуміло навіть нетехнічному власнику.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/><path d="M3 20h18"/></svg>
+          <span class="feature__tag">Базове</span>
+          <div class="feature__title">Підтвердження записів</div>
+          <div class="feature__body">Автоматичне або ручне підтвердження. Схвалюйте, відхиляйте або пропонуйте інший слот — без дзвінків.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span class="feature__tag">Standard</span>
+          <div class="feature__title">Email-сповіщення</div>
+          <div class="feature__body">Брендовані листи клієнту: запис, нагадування, follow-up. Вам — копія кожного запиту.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M8 12l2 2 5-5"/></svg>
+          <span class="feature__tag">Standard</span>
+          <div class="feature__title">Telegram-сповіщення</div>
+          <div class="feature__body">Миттєві алерти в Telegram: нові заявки, скасування, неявки. Власнику не треба заходити в панель.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 18h4"/></svg>
+          <span class="feature__tag">Premium</span>
+          <div class="feature__title">SMS-сповіщення</div>
+          <div class="feature__body">100 SMS у Premium. Для клієнтів, які не читають пошту — ідеально для нагадувань у день візиту.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M7 3v4M17 3v4M7 13h2M11 13h2M15 13h2M7 17h2M11 17h6"/></svg>
+          <span class="feature__tag">Premium</span>
+          <div class="feature__title">Синхронізація з Google Calendar</div>
+          <div class="feature__body">Усі підтверджені записи потрапляють у ваш Google Calendar. Робочий день — поруч з особистими подіями.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          <span class="feature__tag">Базове</span>
+          <div class="feature__title">Кастомна логіка бронювання</div>
+          <div class="feature__body">Багаторівневі послуги, час на підготовку, буфери, багатокрокові сценарії, передоплати — під ваш процес, а не шаблон.</div>
+        </div>
+        <div class="feature reveal">
+          <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <span class="feature__tag">Базове</span>
+          <div class="feature__title">Зони обслуговування</div>
+          <div class="feature__body">Бокси, столи, крісла, спеціалісти, кімнати, робочі місця. До 3 у Standard, до 10 у Premium.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARE ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Чому це краще</span>
+        <h2>Перестаньте вести запис у чатах і DM.</h2>
+        <p class="lead">Ручна координація забирає години щотижня і тихо з'їдає ваші записи. Бронювання окупається в перший же день після запуску.</p>
+      </div>
+
+      <div class="compare">
+        <div class="compare__col compare__col--bad reveal">
+          <h3>Ручний запис сьогодні</h3>
+          <ul>
+            <li>Дзвінки в порожнечу, пропущені виклики, нічні DM.</li>
+            <li>Подвійні записи в завантажені дні.</li>
+            <li>Немає історії — хто, коли і на що записувався.</li>
+            <li>Неявки без жодних нагадувань.</li>
+            <li>Власник стає вузьким місцем процесу.</li>
+          </ul>
+        </div>
+        <div class="compare__col compare__col--good reveal">
+          <h3>З Coldman</h3>
+          <ul>
+            <li>Клієнти самі записуються 24/7 на вільні слоти.</li>
+            <li>Єдине джерело правди — без перетинів.</li>
+            <li>Повна історія по клієнту і послузі.</li>
+            <li>Автоматичні нагадування перед візитом.</li>
+            <li>Ви займаєтесь роботою, а не поштою.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ZONE EXAMPLES ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Реальні конфігурації</span>
+        <h2>Налаштування під вашу фактичну потужність.</h2>
+        <p class="lead">Розкажіть, як влаштований ваш бізнес — ми змоделюємо бронювання саме під нього. Ось приклади з живих запусків.</p>
+      </div>
+      <div class="zones reveal">
+        <span class="zone-chip"><b>4</b> сервісні бокси</span>
+        <span class="zone-chip"><b>3</b> спеціалісти</span>
+        <span class="zone-chip"><b>6</b> столів</span>
+        <span class="zone-chip"><b>2</b> лікарі</span>
+        <span class="zone-chip"><b>5</b> барберів</span>
+        <span class="zone-chip"><b>8</b> робочих місць</span>
+        <span class="zone-chip"><b>10</b> крісел</span>
+        <span class="zone-chip"><b>2</b> масажні кімнати</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ціни</span>
+        <h2>Один продукт, два тарифи. <span style="font-style:italic;color:var(--muted)">Фіксовано щомісяця.</span></h2>
+        <p class="lead">Без вартості запуску, без прихованих платежів. Домен включено на перший рік. Скасування у будь-який час.</p>
+      </div>
+
+      <div class="pricing__grid">
+        <!-- Standard -->
+        <div class="plan reveal">
+          <div class="plan__name">Standard</div>
+          <div class="plan__price">
+            <b>$39</b>
+            <small>/ міс · перший рік</small>
+          </div>
+          <div class="plan__lead">З другого року — $43 / міс. Домен включено на перший рік.</div>
+
+          <div class="plan__divider"></div>
+
+          <ul class="plan__feats">
+            <li>Сайт під ключ для вашого бізнесу <em>дизайн, тексти і сторінки під вашу нішу</em></li>
+            <li>Модуль онлайн-бронювання тайм-слотів <em>клієнти записуються з сайту 24/7</em></li>
+            <li>1–3 зони обслуговування <em>бокси, столи, спеціалісти, кімнати — на ваш вибір</em></li>
+            <li>Адмін-панель для управління записами <em>підтвердження, переноси, історія</em></li>
+            <li>Email-сповіщення <em>запис, нагадування, follow-up</em></li>
+            <li>Telegram-сповіщення <em>миттєві алерти в вашому месенджері</em></li>
+            <li>Кастомна логіка бронювання <em>ваші послуги, тривалість, буфери</em></li>
+            <li>Домен на перший рік <em>ми реєструємо і продовжуємо</em></li>
+          </ul>
+
+          <p class="plan__note">Підходить для однієї локації з невеликою командою чи обмеженою кількістю зон.</p>
+
+          <a href="#lead" class="btn btn--ghost plan__cta">Отримати пропозицію <span class="arrow">→</span></a>
+        </div>
+
+        <!-- Premium -->
+        <div class="plan plan--premium reveal">
+          <span class="plan__badge">Рекомендовано</span>
+          <div class="plan__name">Premium</div>
+          <div class="plan__price">
+            <b>$69</b>
+            <small>/ міс · фіксовано</small>
+          </div>
+          <div class="plan__lead">Усе зі Standard, плюс більше зон, SMS і синхронізація з календарем.</div>
+
+          <div class="plan__divider"></div>
+
+          <ul class="plan__feats">
+            <li>Усе зі Standard <em>сайт + бронювання + адмін-панель</em></li>
+            <li>До 10 зон обслуговування <em>мультистанції чи мультимайстри</em></li>
+            <li>100 SMS-сповіщень у комплекті <em>ідеально для нагадувань у день візиту</em></li>
+            <li>Синхронізація з Google Calendar <em>ваш день в одному вікні</em></li>
+            <li>Пріоритетна підтримка <em>відповідаємо в той самий робочий день</em></li>
+            <li>Кастомна бізнес-логіка <em>передоплати, багатокрокові сценарії, hold-правила</em></li>
+            <li>Онбординг-сесія <em>сідаємо разом і налаштовуємо систему</em></li>
+          </ul>
+
+          <p class="plan__note">Для команд, яким потрібно більше потужності, більше охоплення і менше турбот.</p>
+
+          <a href="#lead" class="btn btn--accent plan__cta">Запросити демо <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Питання, які власники реально ставлять.</h2>
+      </div>
+
+      <div class="faq">
+        <div class="faq__item is-open reveal">
+          <button class="faq__q" type="button">Для кого ця послуга? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Для будь-якого бізнесу, день якого побудований на записах: автомайстерні, шиномонтаж, барбершопи, салони краси й нігтьові студії, SPA, грумінг, стоматологічні та приватні клініки, консультації — і будь-який локальний сервіс зі слотовою логікою.</p></div></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button">Чи можна адаптувати логіку бронювання? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Так. Ми будуємо сценарій бронювання під вашу реальну операційку: тривалість послуг, час на підготовку, перерви, правила для кількох зон, політику щодо неявок, передоплати й будь-які інші специфічні правила.</p></div></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button">Чи можна вести записи для кількох спеціалістів чи зон? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Так. Standard підтримує 1–3 зони, Premium — до 10. Це можуть бути бокси, столи, крісла, спеціалісти, кімнати чи робочі місця. У кожної зони свій графік і доступність.</p></div></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button">Чи отримують клієнти нагадування? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Так. Standard включає нагадування в email і Telegram. Premium додає 100 SMS на місяць для клієнтів, які не читають пошту — це дуже ефективно проти неявок.</p></div></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button">Чи інтегруєте ви Google Calendar? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Так — у тарифі Premium. Усі підтверджені записи синхронізуються з вашим Google Calendar: робочий день видно поруч з особистими подіями.</p></div></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button">Чи підійде це для моєї ніші? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Швидше за все, так. Ми налаштовуємо логіку під ваш процес, а не навпаки. Опишіть коротко свій бізнес — і ми чесно скажемо, чи це наш формат.</p></div></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button">Що входить у підтримку? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Хостинг, безпека і невеликі правки контенту — включені. Premium додає пріоритетну підтримку з відповіддю в той самий робочий день. Більші зміни оцінюємо окремо — зазвичай це недорого.</p></div></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button">Скільки часу займає запуск? <span class="plus">+</span></button>
+          <div class="faq__a"><div><p>Зазвичай 2–3 тижні від старту. Ми беремо на себе домен, дизайн, контент, налаштування бронювання і тестування. Ви погоджуєте ключові етапи, далі запускаємось разом.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA + FORM ============ -->
+  <section class="section" id="lead">
+    <div class="container">
+      <div class="cta-final reveal">
+        <div>
+          <span class="eyebrow" style="color:rgba(245,241,234,.6)">Наступний крок</span>
+          <h2>Перевіримо, чи це ваш формат. <em>30 хв, без зобов'язань.</em></h2>
+          <p>Розкажіть про бізнес — і ми повернемось із короткою пропозицією: який тариф підходить, як може виглядати сайт і коли реально запуститись.</p>
+          <ul class="cta-final__bullets">
+            <li>Відповідаємо протягом одного робочого дня</li>
+            <li>Безкоштовний 30-хвилинний дзвінок для обговорення процесу</li>
+            <li>Без зобов'язань і без вартості запуску</li>
+          </ul>
+        </div>
+
+        <form class="form" data-lead-form action="#" method="POST" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="name">Ваше ім'я</label>
+              <input id="name" name="name" type="text" required placeholder="Іван Петренко" />
+            </div>
+            <div class="field">
+              <label for="business">Тип бізнесу</label>
+              <input id="business" name="business" type="text" required placeholder="Автомайстерня, барбершоп, клініка…" />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input id="phone" name="phone" type="tel" required placeholder="+380 50 000 0000" />
+            </div>
+            <div class="field">
+              <label for="telegram">Telegram (за бажанням)</label>
+              <input id="telegram" name="telegram" type="text" placeholder="@username" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Що важливо врахувати?</label>
+            <textarea id="message" name="message" rows="3" placeholder="Кількість зон, спеціалістів, інтеграції, дедлайни…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent form__submit"
+            data-sending="Надсилаємо…"
+            data-sent="Надіслано ✓"
+            data-error="Спробуйте ще">Запросити демо <span class="arrow">→</span></button>
+          <p class="form__note">Ваші контакти — тільки щоб відповісти на цей запит. Без розсилок і третіх сторін.</p>
+          <div class="form__success">Дякуємо — заявка прийнята. Повернемось до вас протягом одного робочого дня.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">Coldman<span>.</span></div>
+      <div class="footer__links">
+        <a href="/index.html">Студія</a>
+        <a href="#lead">Контакти</a>
+        <a href="#pricing">Ціни</a>
+      </div>
+      <div>© <span data-year>2026</span> Coldman Studio. Усі права захищені.</div>
+    </div>
+  </footer>
+
+  <script src="/js/booking.js" defer></script>
+</body>
+</html>
