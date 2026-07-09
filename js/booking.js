@@ -2,7 +2,7 @@
 // Replace FORMSPREE_ID with the real endpoint before launch.
 
 (() => {
-  const FORMSPREE_ID = "xpzgwqab"; // placeholder; swap on deploy
+  const FORMSPREE_ID = "xqevldea"; // placeholder; swap on deploy
 
   // FAQ accordion
   document.querySelectorAll(".faq__item").forEach((item) => {
